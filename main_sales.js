@@ -28,11 +28,11 @@ function renderProductList(products) {
             "<div class='card' style='width: 18rem;'>" +
             `<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
             "<div class='card-body'>" +
-            `<p style="color: red;"  class='card-text'>Sales off` +
+            `<p class='card-text'>${item.productLabel}</p>` +
             `<hr style="border-top: 3px dashed #bbb;" >` +
-            `<a href="detail.html?id=${item.productID}"><h5 class='card-title'>${item.productName}</h5></a>` +
+            `<a " href="detail.html?id=${item.productID}"><h5 style="font-size: 13pt;" class='card-title'>${item.productName}</h5></a>` +
             `<p class='card-text'>Color: ${item.productColor}</p>` +
-            `<p class='card-text'>Price: ${item.productPrice}</p>` +
+            `<b class='card-text'>Price: ${item.promotion}<span style="font-weight: normal; text-decoration: line-through;" class='price-real'>${item.productPrice}</span></b>` +
             "</div>" +
             "</div>" +
             "</div>"
@@ -88,29 +88,6 @@ function showDetail(id) {
     relatedProducts();
     lastedProducts();
 }
-// Tab_Gallery
-function clickImgs(imgs) {
-    var expandImg = document.getElementById("expandedImg");
-    expandImg.src = imgs.src;
-    expandImg.parentElement.style.display = "block"
-}
-
-$(".minus_plus").on("click", function () {
-    var $button = $(this);
-    var oldValue = $button.closest('.input-counter1').find("input.counter-btn").val();
-    if ($button.text() == "+") {
-        var newVal = parseFloat(oldValue) + 1;
-    }
-    else {
-        if (oldValue > 1) {
-            var newVal = parseFloat(oldValue) - 1;
-        }
-        else {
-            newVal = 1;
-        }
-    }
-    $button.closest('.input-counter1').find("input.counter-btn").val(newVal);
-})
 
 // Pagination
 
@@ -163,58 +140,3 @@ $(document).ready(function () {
         renderProductList(filtered_product);
     })
 });
-
-// Related__P
-async function relatedProducts() {
-    $('#related__p').empty();
-    let products = await getData(1);
-    related_products = [];
-    while (related_products.length < 5) {
-        let item = products[Math.floor(Math.random() * products.length)];
-        if (!related_products.includes(item)) {
-            related_products.push(item);
-        }
-    }
-    console.log(related_products);
-    related_products.forEach(item => {
-        let row = $('#related__p');
-        row.append(
-            "<div class='card' style='width: 18rem;'>" +
-            `<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
-            "<div class='card-body'>" +
-            `<a href="detail.html?id=${item.productID}"><h5 class='card-title'>${item.productName}</h5></a>` +
-            `<p class='card-text'>Color: ${item.productColor}</p>` +
-            `<p class='card-text'>Price: ${item.productPrice}</p>` +
-            "</div>" +
-            "</div>"
-        )
-    });
-}
-// Lasted__P
-async function lastedProducts() {
-    $('#lasted__p').empty();
-    let products = await getData(1);
-    lasted_products = [];
-    while (lasted_products.length < 5) {
-        // Lasted products
-        // lasted_products = products.slice(Math.max(products.length - 5, 1));
-        let item = products[Math.floor(Math.random() * products.length)];
-
-        if (!lasted_products.includes(item)) {
-            lasted_products.push(item);
-        }
-    }
-    lasted_products.forEach(item => {
-        let row = $('#lasted__p');
-        row.append(
-            "<div class='card' style='width: 18rem;'>" +
-            `<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
-            "<div class='card-body'>" +
-            `<a href="detail.html?id=${item.productID}"><h5 class='card-title'>${item.productName}</h5></a>` +
-            `<p class='card-text'>Color: ${item.productColor}</p>` +
-            `<p class='card-text'>Price: ${item.productPrice}</p>` +
-            "</div>" +
-            "</div>"
-        )
-    });
-}

@@ -2,13 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Icon */
-
-.fa-home {
-    font-size: 20pt;
-    margin-bottom: 10px;
-}
-
 .filter-button {
     /* border: 1px solid pink;
     border-radius: 5px; */
@@ -279,6 +272,52 @@ html {
     transform: translate(-1%, 5%);
 }
 
+.page__title-area {
+    background-color: var(--primaryColor);
+}
+
+.header .page__title-container {
+    padding: 1rem;
+    padding-top: 0;
+    height: 38px;
+}
+
+.header .page__titles {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--grey2);
+}
+
+.header .page__titles a {
+    margin-right: 2rem;
+    margin-left: -1rem;
+    margin-top: 0.5rem;
+    padding-top: 0;
+}
+
+.fa-home {
+    font-size: 15pt;
+}
+
+.header .page__title {
+    position: relative;
+    margin-left: -1.5rem;
+    margin-top: -3rem;
+    font-size: 18pt;
+}
+
+.header .page__title::before {
+    position: absolute;
+    content: "/";
+    top: 0;
+    left: -1rem;
+}
+.header .page_title{
+    margin-bottom: 0.6rem;
+    font-size: 17pt;
+}
+
 /*Footer*/
 
 .footer {
@@ -338,6 +377,10 @@ html {
     align-items: center;
     justify-content: center;
     padding: 5rem;
+}
+
+.footer img {
+    max-width: 150%;
 }
 
 .footer .footer-bottom__box {

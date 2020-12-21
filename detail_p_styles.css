@@ -86,6 +86,7 @@ Reset
 
 .header ul {
   list-style: none;
+  height: 2rem;
 }
 
 .header img {
@@ -532,6 +533,7 @@ Navigation
 
 .page__title {
   position: relative;
+  margin-left: -1.5rem;
 }
 
 .page__title::before {
@@ -2014,6 +2016,7 @@ Product Details
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  margin-top: 3rem;
 }
 
 .product-details__btn .add span, .product-details__btn .buy span {

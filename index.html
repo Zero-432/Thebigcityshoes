@@ -16,14 +16,14 @@
       <div class="container">
         <nav class="navigate">
           <div class="nav__logo">
-            <a href="#" class="scroll-link" style="font-family:'Star Jedi'">
+            <a href="index.html" class="scroll-link" style="font-family:'Star Jedi'">
               THEBiGCiTYSHOES
             </a>
           </div>
           <div class="nav__menu">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/" class="nav__link">NAM</a>
+                <a href="Nam.html" class="nav__link">NAM</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Tranning & Running</a></li>
@@ -33,7 +33,7 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">NỮ</a>
+                <a href="Nữ.html" class="nav__link">NỮ</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Giày thể thao</a></li>
@@ -43,7 +43,7 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">TRẺ EM</a>
+                <a href="Trẻ em.html" class="nav__link">TRẺ EM</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Sandal</a></li>
@@ -53,20 +53,20 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">PHỤ KIỆN</a>
+                <a href="Phụ kiện.html" class="nav__link">PHỤ KIỆN</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
-                  <li><a href="#">Sandal</a></li>
-                  <li><a href="#">Dép</a></li>
-                  <li><a href="#">Giày tập đi</a></li>
+                  <li><a href="#">Cap</a></li>
+                  <li><a href="#">Socks</a></li>
+                  <li><a href="#">Tee</a></li>
 
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">SALES</a>
+                <a href="Sales.html" id="filter_sales" class="nav__link">SALES</a>
               </li>
               <li class="nav__item">
-                <a href="#" target="_blank" class="nav__link">BLOG</a>
+                <a href="Blog/Blog1.html" target="_blank" class="nav__link">BLOG</a>
               </li>
 
             </ul>
@@ -74,14 +74,14 @@
           <div class="container search">
             <div class="searchbox">
               <input type="text" maxlength="25" class="search__input" placeholder="Search..." />
-              <i class="fas fa-search icon__search"></i>
+              <i id="search_input" class="fas fa-search icon__search"></i>
             </div>
           </div>
           <div class="nav__icons">
             <a href="./login/Login.html" class="icon__item">
               <i class="fas fa-user"></i>
             </a>
-            <a href="#" class="icon__item">
+            <a href="./login/Cart.html" class="icon__item">
               <i class="fas fa-shopping-cart" id="cart__icon"></i>
               <span id="cart__total">0</span>
             </a>
@@ -89,33 +89,43 @@
         </nav>
       </div>
     </div>
+    <div class="page__title-area">
+      <div class="container">
+        <div class="page__title-container">
+          <ul class="page__titles">
+            <li>
+              <a href="index.html">
+                <i class="fas fa-home"></i>
+              </a>
+            </li>
+            <li class="page__title"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </header>
   <main>
     <div class="container-fluid">
       <div class="content-container">
-        <div class="container-fluid">
-          <i class="fas fa-home"></i>
-          <a href="#"></a>
-        </div>
         <div class="row">
           <div class="side-menu col-2">
             <div>
-              <button class="btn btn-default filter-button" data-filter="all">TẤT CẢ</button>
+              <button id="filter_all" class="btn btn-default filter-button" data-filter="all">TẤT CẢ</button>
             </div>
             <div>
-              <button class="btn btn-default filter-button" data-filter="sp_new">SẢN PHẨM MỚI</button>
+              <button id="filter_new" class="btn btn-default filter-button" data-filter="sp_new">SẢN PHẨM MỚI</button>
             </div>
             <div>
-              <button class="btn btn-default filter-button" data-filter="traning">TRAINING</button>
+              <button id="filter_training" class="btn btn-default filter-button" data-filter="traning">TRAINING</button>
             </div>
             <div>
-              <button class="btn btn-default filter-button" data-filter="sneaker">SNEAKER</button>
+              <button id="filter_sneaker" class="btn btn-default filter-button" data-filter="sneaker">SNEAKER</button>
             </div>
             <div>
-              <button class="btn btn-default filter-button" data-filter="sandal">SANDAL</button>
+              <button id="filter_sandal" class="btn btn-default filter-button" data-filter="sandal">SANDAL</button>
             </div>
             <div>
-              <button class="btn btn-default filter-button" data-filter="boots">BOOTS</button>
+              <button id="filter_boots" class="btn btn-default filter-button" data-filter="boots">BOOTS</button>
             </div>
           </div>
           <div class="content col-8">
