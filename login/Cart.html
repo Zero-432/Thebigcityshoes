@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title></title>
@@ -20,14 +21,14 @@
             right: 28%;
         }
 
-            .close h5 {
-                font-size: 0.75em;
-                color: #FFFFFF;
-                cursor: pointer;
-                background: #0c517d;
-                padding: 0.5em 1em;
-                border-radius: 3px;
-            }
+        .close h5 {
+            font-size: 0.75em;
+            color: #FFFFFF;
+            cursor: pointer;
+            background: #0c517d;
+            padding: 0.5em 1em;
+            border-radius: 3px;
+        }
 
         td.top-remove {
             position: relative;
@@ -43,45 +44,101 @@
             right: 28%;
         }
 
-            .close-btm h5 {
-                font-size: 0.75em;
-                color: #fff;
-                cursor: pointer;
-                background: #0c517d;
-                padding: 0.5em 1em;
-                border-radius: 3px;
-            }
+        .close-btm h5 {
+            font-size: 0.75em;
+            color: #fff;
+            cursor: pointer;
+            background: #0c517d;
+            padding: 0.5em 1em;
+            border-radius: 3px;
+        }
 
         .clear {
             clear: both;
         }
-        }
     </style>
-    <script>
-        // The ready() method can only be used on the current document,
-        $(document).ready(function (c)
-        {
-            $('.close').on('click', function (c)
-            {
-                $('.cake-top').fadeOut('slow', function (c)
-                {
-                    $('.cake-top').remove();
-                });
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close-btm').on('click', function (c) {
-                $('.cake-bottom').fadeOut('slow', function (c) {
-                    $('.cake-bottom').remove();
-                });
-            });
-        });
-    </script>
 </head>
 
 <body>
+    <header id="header" class="header">
+        <div class="navigation">
+            <div class="container">
+                <nav class="navigate">
+                    <div class="nav__logo">
+                        <a href="../index.html" class="scroll-link" style="font-family:'Star Jedi'">
+                            THEBiGCiTYSHOES
+                        </a>
+                    </div>
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="../Nam.html" class="nav__link">NAM</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Tranning & Running</a></li>
+                                    <li><a href="#">Sneaker</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                    <li><a href="#">Boots</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="../Nữ.html" class="nav__link">NỮ</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Giày thể thao</a></li>
+                                    <li><a href="#">Giày cao gót</a></li>
+                                    <li><a href="#">Giày búp bê</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="../Trẻ em.html" class="nav__link">TRẺ EM</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                    <li><a href="#">Dép</a></li>
+                                    <li><a href="#">Giày tập đi</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="../Phụ kiện.html" class="nav__link">PHỤ KIỆN</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                    <li><a href="#">Dép</a></li>
+                                    <li><a href="#">Giày tập đi</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Sales.html" id="filter_sales" class="nav__link">SALES</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Blog/Blog1.html" target="_blank" class="nav__link">BLOG</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="container search">
+                        <div class="searchbox">
+                            <input type="text" maxlength="25" class="search__input" placeholder="Search..." />
+                            <i id="search_input" class="fas fa-search icon__search"></i>
+                        </div>
+                    </div>
+                    <div class="nav__icons">
+                        <a href="Login.html" class="icon__item">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="Cart.html" class="icon__item">
+                            <i class="fas fa-shopping-cart" id="cart__icon"></i>
+                            <span id="cart__total">0</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
     <main id="main">
         <section class="section cart__area">
             <div class="container">
@@ -98,9 +155,9 @@
                                         <th width="10%">TỔNG</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="cart-items">
 
-                                    <tr class="cake-top">
+                                    <!-- <tr class="cake-top">
                                         <td class="product__thumbnail">
                                             <a href="#">
                                                 <img style="width:100%" src="Image/1.jpg" alt="">
@@ -113,7 +170,8 @@
                                         </td>
                                         <td class="quantity">
                                             <div class="product-right">
-                                                <input size="5" min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+                                                <input size="5" min="1" type="number" id="quantity" name="quantity"
+                                                    value="1" class="form-control input-small">
                                             </div>
                                         </td>
                                         <td class="price">
@@ -139,7 +197,8 @@
                                         </td>
                                         <td class="quantity">
                                             <div class="product-right">
-                                                <input size="5" min="1" type="number" id="quantity" name="quantity" value="1" class="form-control input-small">
+                                                <input size="5" min="1" type="number" id="quantity" name="quantity"
+                                                    value="1" class="form-control input-small">
                                             </div>
                                         </td>
                                         <td class="price">
@@ -151,26 +210,26 @@
                                                 <h5>Remove</h5>
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr> -->
 
                                 </tbody>
                             </table>
                             <div class="cart-btns">
                                 <div class="continue__shopping">
-                                    <a href="/">Tiếp tục mua sắm</a>
+                                    <a href="../index.html">Tiếp tục mua sắm</a>
                                 </div>
                                 <div class="check__shipping">
                                     Tổng cộng
                                     <span class="new__price">$250.99</span>
-                                    
+
                                 </div>
                             </div>
                             <div style="float:right">
                                 <input type="button" value="Thanh toán" />
                             </div>
-                           
 
-                          
+
+
                     </form>
                 </div>
             </div>
@@ -179,6 +238,54 @@
 
 
     </main>
-
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div id="logo" class="footer-top__box">
+                    <img src="../images/logo/d.png" />
+                </div>
+                <div class="footer-top__box">
+                    <h3>HỖ TRỢ</h3>
+                    <a href="#">bigcityshoes.web1@gmail.com</a>
+                    <a href="#">0973-908-413</a>
+                </div>
+                <div class="footer-top__box">
+                    <h3>THÔNG TIN</h3>
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Liên hệ với chúng tôi</a>
+                    <a href="#">Giao & Đổi trả hàng </a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="footer-top__box">
+                    <h3>THEO DÕI</h3>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Youtube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        // The ready() method can only be used on the current document,
+        $(document).ready(function (c) {
+            $('.close').on('click', function (c) {
+                $('.cake-top').fadeOut('slow', function (c) {
+                    $('.cake-top').remove();
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function (c) {
+            $('.close-btm').on('click', function (c) {
+                $('.cake-bottom').fadeOut('slow', function (c) {
+                    $('.cake-bottom').remove();
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

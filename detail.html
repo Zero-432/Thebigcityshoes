@@ -31,14 +31,14 @@
       <div class="container">
         <nav class="navigate">
           <div class="nav__logo">
-            <a href="#" class="scroll-link" style="font-family:'Star Jedi'">
+            <a href="index.html" class="scroll-link" style="font-family:'Star Jedi'">
               THEBiGCiTYSHOES
             </a>
           </div>
           <div class="nav__menu">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="/" class="nav__link">NAM</a>
+                <a href="Nam.html" class="nav__link">NAM</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Tranning & Running</a></li>
@@ -48,7 +48,7 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">NỮ</a>
+                <a href="Nữ.html" class="nav__link">NỮ</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Giày thể thao</a></li>
@@ -58,7 +58,7 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">TRẺ EM</a>
+                <a href="Trẻ em.html" class="nav__link">TRẺ EM</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
                   <li><a href="#">Sandal</a></li>
@@ -68,20 +68,20 @@
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="/" class="nav__link">PHỤ KIỆN</a>
+                <a href="Phụ kiện.html" class="nav__link">PHỤ KIỆN</a>
                 <ul class="hover__header">
                   <li><a href="#">Sản phẩm mới</a></li>
-                  <li><a href="#">Sandal</a></li>
-                  <li><a href="#">Dép</a></li>
-                  <li><a href="#">Giày tập đi</a></li>
+                  <li><a href="#">Cap</a></li>
+                  <li><a href="#">Socks</a></li>
+                  <li><a href="#">Tee</a></li>
 
                 </ul>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">SALES</a>
+                <a href="Sales.html" class="nav__link">SALES</a>
               </li>
               <li class="nav__item">
-                <a href="#" target="_blank" class="nav__link">BLOG</a>
+                <a href="Blog/Blog1.html" target="_blank" class="nav__link">BLOG</a>
               </li>
 
             </ul>
@@ -93,15 +93,29 @@
             </div>
           </div>
           <div class="nav__icons">
-            <a href="#" class="icon__item">
+            <a href="./login/Login.html" class="icon__item">
               <i class="fas fa-user"></i>
             </a>
-            <a href="#" class="icon__item">
+            <a href="./login/Cart.html" class="icon__item">
               <i class="fas fa-shopping-cart" id="cart__icon"></i>
               <span id="cart__total">0</span>
             </a>
           </div>
         </nav>
+      </div>
+    </div>
+    <div class="page__title-area">
+      <div class="container">
+        <div class="page__title-container">
+          <ul class="page__titles">
+            <li>
+              <a href="index.html">
+                <i class="fas fa-home"></i>
+              </a>
+            </li>
+            <li class="page__title"></li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -114,21 +128,6 @@
           <div class="product-detail__left">
             <div class="details__container--left">
               <div class="product__pictures">
-                <!-- <div class="pictures__container">
-                  <img class="picture" src="Product1/20.jpg" id="pic20">
-                </div>
-                <div class="pictures__container">
-                  <img class="picture" src="Product1/2.jpg" id="pic2">
-                </div>
-                <div class="pictures__container">
-                  <img class="picture" src="Product1/3.jpg" id="pic3">
-                </div>
-                <div class="pictures__container">
-                  <img class="picture" src="Product1/4.jpg" id="pic4">
-                </div>
-                <div class="pictures__container">
-                  <img class="picture" src="Product1/5.jpg" id="pic5">
-                </div> -->
               </div>
               <div class="product__picture" id="product__picture">
                 <!-- <div class="rect" id="rect"></div> -->
@@ -159,12 +158,12 @@
                     <div class="input-counter">
                       <span>Quantity:</span>
                       <div>
-                        <div class="input-counter1">
+                        <div class="input-counter">
                           <span class="minus-btn" onselectstart="return false">
                             <a href="#" class="minus_plus">-</a>
                           </span>
                           <div>
-                            <input type="text" value="1" class="counter-btn" readonly>
+                            <input id="product_qty" type="text" value="1" class="counter-btn" readonly>
                           </div>
                           <span class="plus-btn" onselectstart="return false">
                             <a href="#" class="minus_plus">+</a>
@@ -177,8 +176,8 @@
                             <span class="minus-btn">
                               <a href="#" class="minus_plus">-</a>
                             </span>
-                            <input type="text" value="40" class="counter-btn">
-                            <span class="plus-btn">
+                            <input type="text" value="40" class="counter-btn" readonly>
+                            <span class="plus-btn" onselectstart="return false">
                               <a href="#" class="minus_plus">+</a>
                             </span>
 
@@ -204,13 +203,13 @@
                   </li>
                 </ul>
                 <div class="product-details__btn">
-                  <a class="add" href="#">
+                  <a id="add_cart" class="add" href="./login/Cart.html">
                     <span>
                       <i class="fas fa-cart-plus"></i>
                     </span>
                     ADD TO CART
                   </a>
-                  <a class="buy" href="#">
+                  <a class="buy" href="./login/Cart.html">
                     <span>
                       <i class="far fa-credit-card"></i>
                     </span>
@@ -341,7 +340,7 @@
     <div class="container">
       <div class="footer__top">
         <div id="logo" class="footer-top__box">
-          <img src="./images/d.png" />
+          <img src="./images/logo/d.png" />
         </div>
         <div class="footer-top__box">
           <h3>HỖ TRỢ</h3>

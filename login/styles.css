@@ -2310,3 +2310,360 @@ Cart Area Media Query
     height: 1.5rem;
   }
 }
+
+/* Header */
+
+:root {
+  --primaryColor: #f1f1f1;
+  --black: #222;
+  --black2: #555;
+  --black3: #252525;
+  --black4: #000;
+  --black5: #212529;
+  --orange: #eb0028;
+  --white: #fff;
+  --grey: #959595;
+  --grey2: #666;
+  --grey3: #ccc;
+  --secondaryColor: #2b1f4d;
+  --yellow: #ffcc00;
+  --green: #59b210;
+  --blue: rgb(56, 10, 223);
+}
+
+.header div a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 15px;
+  display: inline-block;
+}
+
+.header div a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.nav__menu ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__menu ul li {
+  display: inline-block;
+}
+
+.nav__menu ul li:hover {
+  background: white;
+}
+
+.nav__menu ul li:hover ul {
+  display: block;
+}
+
+.nav__menu ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+
+.nav__menu ul li ul li {
+  background: white;
+  display: block;
+}
+
+.nav__menu ul li ul li a {
+  display: block !important;
+}
+
+.nav__menu ul li ul li:hover {
+  background: none;
+}
+
+.header * {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header img {
+  max-width: 100%;
+}
+
+.header {
+  position: relative;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.header .container {
+  max-width: 150rem;
+  align-content: center;
+  padding: 0 1rem;
+}
+
+.header .navigation {
+  position: relative;
+  height: 5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.header .navigate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  height: 5rem;
+  padding: 0 0.5rem;
+}
+
+.header .nav__logo a {
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1.6rem;
+  font-weight: 700;
+}
+
+.header .nav__logo {
+  transform: translate(25%, 0%);
+}
+
+.header .nav__menu {
+  width: 50%;
+  transform: translate(10%);
+}
+
+.header .nav__list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+}
+
+.header .nav__item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.header .nav__list .nav__link:link, .header .nav__list .nav__link:visited {
+  display: flex;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.3s ease-in-out;
+  width: 100%;
+  margin: 17px;
+  text-decoration: none;
+}
+
+.header .nav__link a {
+  justify-content: center;
+  width: 100%;
+  margin: 30px;
+}
+
+.header .nav__list .nav__link:hover {
+  color: var(--orange);
+}
+
+.header .nav__icons {
+  display: flex;
+  position: relative;
+  transform: translate(-80%, 0%);
+}
+
+.header .nav__icons .icon__item {
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 15pt;
+}
+
+.header .nav__icons .icon__item:link, .header .nav__icons .icon__item:visited {
+  color: var(--black);
+}
+
+.header .nav__icons .icon__item:hover {
+  background-color: var(--orange);
+  border: 1px solid var(--black);
+}
+
+.header .nav__icons .icon__item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.header .nav__icons #cart__total {
+  font-size: 1rem;
+  position: absolute;
+  top: 2px;
+  right: -6px;
+  background-color: var(--orange);
+  padding: 0.2rem 0.4rem;
+  border-radius: 100%;
+  color: var(--primaryColor);
+}
+
+.header .nav__icons .icon__item i {
+  width: 2rem;
+  height: 1.6rem;
+  transform: translate(20%, 0%);
+}
+
+.header .container.search {
+  width: 13rem;
+  height: 50%;
+  justify-content: left;
+  transform: translate(-40%, 0)
+}
+
+.header .searchbox {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s linear;
+}
+
+.header .search__input {
+  position: absolute;
+  display: block;
+  width: 120%;
+  height: 50%;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  background-color: blanchedalmond;
+  padding: 1rem;
+  color: darkgrey;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.4s linear;
+}
+
+.header .icon__search {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(400%, -40%);
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+  font-size: 13pt;
+}
+
+.header #cart__icon {
+  transform: translate(-1%, 5%);
+}
+
+/*Footer*/
+
+.footer {
+  background-color: var(--black3);
+  padding: 6rem 1rem;
+  line-height: 3rem;
+  margin-right: -50;
+}
+
+.footer .footer-top__box span {
+  margin-right: 1rem;
+}
+
+.footer .footer__top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: var(--grey3);
+}
+
+.footer .footer-top__box a:link, .footer .footer-top__box a:visited {
+  display: block;
+  color: var(--grey);
+  font-size: 1rem;
+  transition: 0.6s;
+  text-decoration: none;
+}
+
+.footer .footer-top__box a:hover {
+  color: var(--orange);
+}
+
+.footer .footer-top__box div {
+  color: var(--grey);
+  font-size: 1.4rem;
+}
+
+.footer .footer-top__box h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  /* margin-left: 13px; */
+}
+
+.footer #logo {
+  position: relative;
+  right: 5rem;
+  top: auto;
+}
+
+.footer .footer__bottom p {
+  color: white;
+  align-content: center;
+}
+
+.footer .footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.footer .footer-bottom__box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-top__box {
+  padding-right: 5rem;
+}
+
+.goto-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background: pink;
+  bottom: 40px;
+  right: 50px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  font-size: 22pt;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
+}

@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
     <!--Bootstrap của con mắt hehe, mò lắm mới ra á hừm hừm-->
     <style>
         * {
@@ -111,63 +113,179 @@
 </head>
 
 <body>
+    <header id="header" class="header">
+        <div class="navigation">
+            <div class="container">
+                <nav class="navigate">
+                    <div class="nav__logo">
+                        <a href="../index.html" class="scroll-link" style="font-family:'Star Jedi'">
+                            THEBiGCiTYSHOES
+                        </a>
+                    </div>
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="Nam.html" class="nav__link">NAM</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Tranning & Running</a></li>
+                                    <li><a href="#">Sneaker</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                    <li><a href="#">Boots</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Nữ.html" class="nav__link">NỮ</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Giày thể thao</a></li>
+                                    <li><a href="#">Giày cao gót</a></li>
+                                    <li><a href="#">Giày búp bê</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Trẻ em.html" class="nav__link">TRẺ EM</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Sandal</a></li>
+                                    <li><a href="#">Dép</a></li>
+                                    <li><a href="#">Giày tập đi</a></li>
 
-    <div class="wrap">
-        <div id="Div1">
-            <img src="Image/Maugiay.png" />
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Phụ kiện.html" class="nav__link">PHỤ KIỆN</a>
+                                <ul class="hover__header">
+                                    <li><a href="#">Sản phẩm mới</a></li>
+                                    <li><a href="#">Cap</a></li>
+                                    <li><a href="#">Socks</a></li>
+                                    <li><a href="#">Tee</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Sales.html" id="filter_sales" class="nav__link">SALES</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="Blog/Blog1.html" target="_blank" class="nav__link">BLOG</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="container search">
+                        <div class="searchbox">
+                            <input type="text" maxlength="25" class="search__input" placeholder="Search..." />
+                            <i id="search_input" class="fas fa-search icon__search"></i>
+                        </div>
+                    </div>
+                    <div class="nav__icons">
+                        <a href="./login/Login.html" class="icon__item">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <a href="./login/Cart.html" class="icon__item">
+                            <i class="fas fa-shopping-cart" id="cart__icon"></i>
+                            <span id="cart__total">0</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="page__title-area">
+            <div class="container">
+                <div class="page__title-container">
+                    <ul class="page__titles">
+                        <li>
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li class="page__title"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="wrap">
+            <div id="Div1">
+                <img src="Image/Maugiay.png" />
+
+            </div>
 
         </div>
+        <div id="Div2" align="center">
+            <div style="align-content:center">
+                <h2>Đăng nhập</h2>
 
-    </div>
-    <div id="Div2" align="center">
-        <div style="align-content:center">
-            <h2>Đăng nhập</h2>
+                <button>
+                    <img width="22px" src="Image/facebook.png" />
+                    <a style="color: #fff; align-content:center" href="https://www.facebook.com/kieuly1812/"><i
+                            class="fa-fa-facebook"></i>Tiếp tục với Facebook</a>
+                </button> <br />
+                <br />
+                <button>
+                    <img width="22px" src="Image/google.png" />
+                    <a style="color:black; align-content:center" href="#"><i class="fa-fa-google"></i> Tiếp tục với
+                        Google</a>
+                </button>
+            </div>
+            <hr />
 
-            <button>
-                <img width="22px" src="Image/facebook.png" />
-                <a style="color: #fff; align-content:center" href="https://www.facebook.com/kieuly1812/"><i
-                        class="fa-fa-facebook"></i>Tiếp tục với Facebook</a>
-            </button> <br />
-            <br />
-            <button>
-                <img width="22px" src="Image/google.png" />
-                <a style="color:black; align-content:center" href="#"><i class="fa-fa-google"></i> Tiếp tục với
-                    Google</a>
-            </button>
-        </div>
-        <hr />
+            <div>
+                <form>
 
-        <div>
-            <form>
+                    <div class="container">
+                        <label for="uname"><b>Email</b></label>
+                        <input id="email" type="text" placeholder="Nhập email" name="email" required>
 
-                <div class="container">
-                    <label for="uname"><b>Email</b></label>
-                    <input id="email" type="text" placeholder="Nhập email" name="email" required>
+                        <label for="psw"><b>Mật khẩu</b></label>
+                        <div class="wrapper">
+                            <input type="password" placeholder="password" id="password" />
+                            <i id="eye" class="fa fa-eye" aria-hidden="true"></i>
 
-                    <label for="psw"><b>Mật khẩu</b></label>
-                    <div class="wrapper">
-                        <input type="password" placeholder="password" id="password" />
-                        <i id="eye" class="fa fa-eye" aria-hidden="true"></i>
+                        </div>
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Nhớ mật khẩu
+                        </label>
+                        <button id="login_btn" type="button">Đăng nhập</button>
+                        <p>Bạn chưa đăng ký? <a href="Dang ky.html"><strong>Đăng ký</strong></a></p>
 
                     </div>
 
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Nhớ mật khẩu
-                    </label>
-                    <button id="login_btn" type="button">Đăng nhập</button>
-                    <p>Bạn chưa đăng ký? <a href="Dang ky.html"><strong>Đăng ký</strong></a></p>
 
-                </div>
-
-
-            </form>
+                </form>
+            </div>
         </div>
-
-
-
-
-    </div>
-
+    </main>
+    <!-- <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div id="logo" class="footer-top__box">
+                    <img src="./images/logo/d.png" />
+                </div>
+                <div class="footer-top__box">
+                    <h3>HỖ TRỢ</h3>
+                    <a href="#">bigcityshoes.web1@gmail.com</a>
+                    <a href="#">0973-908-413</a>
+                </div>
+                <div class="footer-top__box">
+                    <h3>THÔNG TIN</h3>
+                    <a href="#">Điều khoản</a>
+                    <a href="#">Liên hệ với chúng tôi</a>
+                    <a href="#">Giao & Đổi trả hàng </a>
+                    <a href="#">FAQs</a>
+                </div>
+                <div class="footer-top__box">
+                    <h3>THEO DÕI</h3>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Youtube</a>
+                </div>
+            </div>
+        </div>
+    </footer> -->
     <script>
         var password = document.getElementById('password');
         var eye = document.getElementById('eye');
