@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        
+        .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-50 {
+            -ms-flex: 50%; /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%; /* IE10 */
+            flex: 75%;
+        }
+
+      
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            width:50%;
+            align-content:center;
+           
+            background-color: #f2f2f2;
+            padding: 5px 25% 15px 25%;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 99%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 20%;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+                background-color: #45a049;
+        }
+
+        .txtarea {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            line-height: 34px;
+            color: #555555;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+
+        }
+
+        .txtarea:focus {
+                border-color: #66afe9;
+                outline: 0;
+         }
+
+
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-75">
+            <div class="container">
+                <form action="/action_page.php">
+
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>CHI TIẾT THANH TOÁN</h3>
+                            <label for="fname"> Họ và tên</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Nguyễn Văn A">
+                            <label for="email"> Email</label>
+                            <input type="text" id="email" name="email" placeholder="nguyenvana@example.com">
+                            <label for="sdt"> Số điện thoại</label>
+                            <input type="text" id="city" name="sdt" placeholder="0355699280">
+                            <label for="adr"> Địa chỉ</label>
+                            <input type="text" id="adr" name="address" placeholder="Số 7, Đường 4B, khu phố 3, Linh Xuân Thủ Đức">
+                            <label for="order_comments">Ghi chú đơn hàng</label>
+                            <textarea id="order_comments" class="txtarea" placeholder="Ghi chú cho người bán " rows="3" cols="5"></textarea>
+                        
+
+
+
+                        </div>
+
+          
+                    </div>
+                    <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Nhân viên giao hàng sẽ giao đúng thông tin trên
+                    </label>
+                    <input type="submit" value="Thanh toán" class="btn">
+                </form>
+            </div>
+        </div>
+
+   
+    </div>
+  
+</body>
+</html>
