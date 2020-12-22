@@ -8,7 +8,7 @@ function returnHomePage() {
 	window.location = "mainpage.html";
 }
 function getData(page) {
-	let url = `https://products-json.herokuapp.com/products?_page=${page}&_limit=12`;
+	let url = `https://upbeat-leaf-marmoset.glitch.me/products?_page=${page}&_limit=12`;
 	return $.getJSON(url, function (data) {
 		product_list = data;
 		totalProducts = product_list.length;
@@ -16,13 +16,13 @@ function getData(page) {
 	});
 }
 function get_totalProducts(page) {
-	let url = `https://products-json.herokuapp.com/products`;
+	let url = `https://upbeat-leaf-marmoset.glitch.me/products`;
 	return $.getJSON(url, function (data) {
 		total_products = data;
 	});
 }
 function getProductsCount() {
-	let url = `https://products-json.herokuapp.com/totalProducts`;
+	let url = `https://upbeat-leaf-marmoset.glitch.me/totalProducts`;
 	$.getJSON(url, function (data) {
 		createPagination(data.total, 12);
 	});
@@ -50,7 +50,7 @@ function renderProductList(products) {
 
 
 function showDetail(id) {
-	let url = `https://products-json.herokuapp.com/products/${id}`;
+	let url = `https://upbeat-leaf-marmoset.glitch.me/products/${id}`;
 	$.getJSON(url, function (data) {
 		let product = data;
 		// let product_detail = $('#product-info');
@@ -155,6 +155,7 @@ $(document).ready(function () {
 	$('#all_pk').click(() => {
 		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện');
 		renderProductList(filtered_product);
+		$('pagination').show();
 	})
 	$('#newpk').click(() => {
 		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện' && x.productLabel == 'New Arrival');
