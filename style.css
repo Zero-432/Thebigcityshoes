@@ -2,6 +2,15 @@ html {
     scroll-behavior: smooth;
 }
 
+<<<<<<< HEAD
+=======
+.fixed {
+    position: fixed;
+    z-index: 1000;
+    top: 0px;
+}
+
+>>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 .filter-button {
     /* border: 1px solid pink;
     border-radius: 5px; */
@@ -15,6 +24,7 @@ html {
     color: white;
     background-color: pink;
 }
+<<<<<<< HEAD
 .card-header:first-child{
     background: none;
 }
@@ -28,6 +38,26 @@ html {
     color:  none;
     text-decoration: none;
 }
+=======
+
+.card-header:first-child {
+    background: none;
+}
+
+.card {
+    border: none;
+}
+
+.btn.focus, .btn:focus {
+    box-shadow: none;
+}
+
+.btn:hover {
+    color: none;
+    text-decoration: none;
+}
+
+>>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 /* Header */
 
 :root {
@@ -144,6 +174,7 @@ html {
     height: 100%;
     height: 5rem;
     padding: 0 0.5rem;
+    background: white;
 }
 
 .header .nav__logo a {
@@ -265,9 +296,7 @@ html {
     border-radius: 2rem;
     background-color: blanchedalmond;
     padding: 1rem;
-    color: darkgrey;
     font-size: 1.3rem;
-    cursor: pointer;
     transition: 0.4s linear;
 }
 
@@ -278,8 +307,8 @@ html {
     transform: translate(400%, -40%);
     width: 2rem;
     height: 2rem;
-    pointer-events: none;
     font-size: 13pt;
+    cursor: pointer;
 }
 
 .header #cart__icon {
@@ -327,7 +356,12 @@ html {
     top: 0;
     left: -1rem;
 }
+<<<<<<< HEAD
 .header .page_title{
+=======
+
+.header .page_title {
+>>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
     margin-bottom: 0.6rem;
     font-size: 17pt;
 }
