@@ -447,3 +447,8 @@ html {
         transform: scale(1);
     }
 }
+
+.users.nav__icons {
+    transform: unset;
+    right: 30px;
+}
