@@ -23,6 +23,8 @@ function getData(page) {
 		product_list = data;
 		totalProducts = product_list.length;
 		renderProductList(product_list);
+		$(".loader").fadeOut();
+		$("#preloader").delay(100).fadeOut("slow");
 	});
 }
 function get_totalProducts(page) {
@@ -63,15 +65,6 @@ function showDetail(id) {
 	let url = `https://upbeat-leaf-marmoset.glitch.me/products/${id}`;
 	$.getJSON(url, function (data) {
 		let product = data;
-		// let product_detail = $('#product-info');
-		// var content =
-		//     `<img class='card-img-top' src="${product.media.link[0]}" alt='image'>` +
-		//     "<div class='card-body text-center'>" +
-		//     `<h5 class='card-title'>${product.productName}</h5>` +
-		//     `<p class='card-text'>Color: ${product.productColor}</p>` +
-		//     `<p class='card-text'>Price: ${product.productPrice}</p>` +
-		//     "</div>";
-		// product_detail.append(content);
 
 		$('.product-detail__content > h3').text(product.productName);
 		$('.page__title').text(product.productName);
@@ -89,6 +82,9 @@ function showDetail(id) {
 		}
 	})
 
+	// ẩn loader
+	$(".loader").fadeOut();
+	$("#preloader").delay(100).fadeOut("slow");
 	// 
 	relatedProducts();
 	lastedProducts();
