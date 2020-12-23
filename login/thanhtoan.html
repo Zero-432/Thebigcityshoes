@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title></title>
     <style>
-        
+        body {
+            margin: 0;
+        }
+
         .row {
-            display: -ms-flexbox; /* IE10 */
+            display: -ms-flexbox;
+            /* IE10 */
             display: flex;
-            -ms-flex-wrap: wrap; /* IE10 */
+            -ms-flex-wrap: wrap;
+            /* IE10 */
             flex-wrap: wrap;
             margin: 0 -16px;
         }
 
         .col-50 {
-            -ms-flex: 50%; /* IE10 */
+            -ms-flex: 50%;
+            /* IE10 */
             flex: 50%;
         }
 
         .col-75 {
-            -ms-flex: 75%; /* IE10 */
+            -ms-flex: 75%;
+            /* IE10 */
             flex: 75%;
         }
 
-      
+
         .col-50,
         .col-75 {
             padding: 0 16px;
         }
 
         .container {
-            width:50%;
-            align-content:center;
-           
+            width: 50%;
+            align-content: center;
+
             background-color: #f2f2f2;
             padding: 5px 25% 15px 25%;
             border: 1px solid lightgrey;
@@ -66,7 +74,7 @@
         }
 
         .btn:hover {
-                background-color: #45a049;
+            background-color: #45a049;
         }
 
         .txtarea {
@@ -82,13 +90,12 @@
         }
 
         .txtarea:focus {
-                border-color: #66afe9;
-                outline: 0;
-         }
-
-
+            border-color: #66afe9;
+            outline: 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="row">
         <div class="col-75">
@@ -105,27 +112,31 @@
                             <label for="sdt"> Số điện thoại</label>
                             <input type="text" id="city" name="sdt" placeholder="0355699280">
                             <label for="adr"> Địa chỉ</label>
-                            <input type="text" id="adr" name="address" placeholder="Số 7, Đường 4B, khu phố 3, Linh Xuân Thủ Đức">
+                            <input type="text" id="adr" name="address"
+                                placeholder="Số 7, Đường 4B, khu phố 3, Linh Xuân Thủ Đức">
                             <label for="order_comments">Ghi chú đơn hàng</label>
-                            <textarea id="order_comments" class="txtarea" placeholder="Ghi chú cho người bán " rows="3" cols="5"></textarea>
-                        
+                            <textarea id="order_comments" class="txtarea" placeholder="Ghi chú cho người bán " rows="3"
+                                cols="5"></textarea>
+
 
 
 
                         </div>
 
-          
+
                     </div>
                     <label>
-                        <input type="checkbox" checked="checked" name="sameadr"> Nhân viên giao hàng sẽ giao đúng thông tin trên
+                        <input type="checkbox" checked="checked" name="sameadr"> Nhân viên giao hàng sẽ giao đúng thông
+                        tin trên
                     </label>
                     <input type="submit" value="Thanh toán" class="btn">
                 </form>
             </div>
         </div>
 
-   
+
     </div>
-  
+
 </body>
+
 </html>
