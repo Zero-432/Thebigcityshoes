@@ -352,7 +352,7 @@ $(document).ready(function () {
 		$('.pagination').hide();
 	})
 	$('#filter_sales').click(() => {
-		let filtered_product = total_products.filter(x => x.productLabel == 'Sales off');
+		let filtered_product = total_products.filter(x => x.productName.productLabel == 'Sales off');
 		renderProductList(filtered_product);
 		$('.pagination').hide();
 	})
