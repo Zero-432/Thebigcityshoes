@@ -48,9 +48,9 @@ function renderProductList(products) {
 			"<div class='card-body'>" +
 			`<p class='card-text'>${item.productLabel}</p>` +
 			`<hr style="border-top: 3px dashed #bbb;" >` +
-			`<a href="detail.html?id=${item.productID}"><h5 style="font-size: 13pt;" class='card-title'>${item.productName}</h5></a>` +
-			`<p class='card-text'>Color: ${item.productColor}</p>` +
-			`<b class='card-text'>Price: ${item.productPrice}</b>` +
+			`<a class='a-card-title' href="detail.html?id=${item.productID}"><h5 style="font-size: 13pt;" class='card-title'>${item.productName}</h5></a>` +
+			`<p class='card-text'>Màu: ${item.productColor}</p>` +
+			`<b class='card-text'>Giá: ${item.productPrice}</b>` +
 			"</div>" +
 			"</div>" +
 			"</div>"
@@ -170,9 +170,9 @@ function createPagination(total, limit) {
 $('#search_input').click(function () {
 	let search_query = $('.search__input').val();
 	let url = `https://upbeat-leaf-marmoset.glitch.me/products?q=${search_query}`;
-		$.getJSON(url, function (data) {
-			renderProductList(data);
-		});
+	$.getJSON(url, function (data) {
+		renderProductList(data);
+	});
 })
 
 /// Khi trang home được load
@@ -356,6 +356,10 @@ $(document).ready(function () {
 		renderProductList(filtered_product);
 		$('.pagination').hide();
 	})
+
+
+	// load tổng số trong giỏ hàng lên icon giỏ hàng
+	loadCartTotal();
 });
 function loadCart() {
 	if (localStorage.getItem('cart')) {
@@ -376,6 +380,7 @@ $('#product-info').ready(function () {
 	const product_id = urlParams.get('id');
 	showDetail(product_id);
 
+	/// cart
 	var cart = loadCart() || []; // Mảng chứa các item có trong cart | load ra từ local hoặc [] nếu chưa có
 	$('#add_cart').click(function () {
 		let item = {
@@ -387,8 +392,9 @@ $('#product-info').ready(function () {
 		item.id = product_id;
 		item.name = $('.product-detail__content > h3').text();
 		item.image = $('#product__picture .picture__container img').attr('src');
-		item.price = parseInt($('.product-detail__content > .price .new__price').text().replace(',', '.').replace(' ', '').slice(0, -4));
+		item.price = parseInt($('.product-detail__content > .price .new__price').text().slice(0, -4).replace('.', ''));
 		// kiểm tra trong cart có sp này chưa
+		let quantity = $('#product_qty').val(); // số lượng sản phẩm
 		// tìm index của item trùng
 		let duplicate_index = cart.findIndex(cart_item => cart_item.product.id === item.id);
 		if (duplicate_index > -1) { // nếu trùng
@@ -396,13 +402,27 @@ $('#product-info').ready(function () {
 		} else { // ko trùng
 			cart.push({
 				product: item,
-				quantity: parseInt($('#product_qty').val())
+				quantity: parseInt(quantity)
 			});
 		}
 		// lưu cart vào local
 		saveCart(cart);
+		loadCartTotal();
 	})
 });
+
+function loadCartTotal() {
+	let cart = JSON.parse(localStorage.getItem('cart'));
+	let total_cartItems = 0;
+	cart.forEach(x => total_cartItems += x.quantity);
+	// hiển thị tổng số sản phẩm lên icon giỏ hàng ở góc phải
+	$('#cart__total').text(total_cartItems);
+}
+
+function formatNumber(num) {
+	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 // Khi trang cart load
 $('cart-container').ready(function () {
 	displayCart();
@@ -412,18 +432,18 @@ function displayCart() {
 	let cart = loadCart();
 	let total_price = 0;
 	cart.forEach(item => total_price += item.product.price * item.quantity);
-	$('.new__price').text(total_price.toString() + 'VND');
+	$('.new__price').text(formatNumber(total_price) + 'VND');
 	for (let item of cart) {
 		$('.cart-items').append(
 			`
-			<tr class="cake-top">
+			<tr id="item${item.product.id}">
 				<td class="product__thumbnail">
-					<a href="#">
+					<a href="../detail.html?id=${item.product.id}">
 						<img style="width:100%" src="${item.product.image}" alt="item image">
 					</a>
 				</td>
 				<td class="product__name">
-					<a href="../detail.html?id=${item.productID}">${item.product.name}</a>
+					<a href="../detail.html?id=${item.product.id}">${item.product.name}</a>
 					<br><br>
 					<small>White/6.25</small>
 				</td>
@@ -434,11 +454,11 @@ function displayCart() {
 					</div>
 				</td>
 				<td class="price">
-					<h4>${item.product.price} VND</h4>
+					<h4>${formatNumber(item.product.price)} VND</h4>
 				</td>
 				<td class="top-remove">
-					<h4>${item.quantity * item.product.price} VND</h4>
-					<div class="close">
+					<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
+					<div class="close" onclick="remove_cart_item(${item.product.id})">
 						<h5>Remove</h5>
 					</div>
 				</td>
@@ -503,3 +523,45 @@ async function lastedProducts() {
 		)
 	});
 }
+
+function remove_cart_item(id) {
+	// xóa item trên giao diện
+	let el_id = `#item${id}`
+	$(el_id).fadeOut('slow', function (c) {
+		$(el_id).remove();
+	});
+
+	// xóa item trong localStorage
+	let cart = JSON.parse(localStorage.getItem('cart'));
+	cart = cart.filter(x => x.product.id != id);
+	localStorage.setItem('cart', JSON.stringify(cart));
+	loadCartTotal();
+}
+
+async function loadPhukien() {
+	let total_products = await get_totalProducts();
+	// console.log(total_products);
+	total_products = total_products.filter(x => x.category == 'Phụ kiện');
+	console.log(total_products);
+	$('.phukien').empty();
+	total_products.forEach(item => {
+		let row = $('.phukien');
+		row.append(
+			"<div class='col-4'" + '>' +
+			"<div class='card' style='width: 18rem;'>" +
+			`<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
+			"<div class='card-body'>" +
+			`<p class='card-text'>${item.productLabel}</p>` +
+			`<hr style="border-top: 3px dashed #bbb;" >` +
+			`<a href="detail.html?id=${item.productID}"><h5 style="font-size: 13pt;" class='card-title'>${item.productName}</h5></a>` +
+			`<p class='card-text'>Màu: ${item.productColor}</p>` +
+			`<b class='card-text'>Giá: ${item.productPrice}</b>` +
+			"</div>" +
+			"</div>" +
+			"</div>"
+		)
+	});
+}
+$('.phukien').ready(function () {
+	loadPhukien();
+})

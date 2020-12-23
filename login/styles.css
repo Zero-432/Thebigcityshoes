@@ -37,7 +37,7 @@ html {
 body, input {
   font-size: 1.6rem;
   font-weight: 400;
-  font-family: "Archivo", sans-serif;
+  font-family: 'Cabin', sans-serif;
   color: var(--black);
 }
 
@@ -2460,7 +2460,7 @@ Cart Area Media Query
 
 .header .nav__list .nav__link:link, .header .nav__list .nav__link:visited {
   display: flex;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: var(--black);
   transition: color 0.3s ease-in-out;
@@ -2482,7 +2482,7 @@ Cart Area Media Query
 .header .nav__icons {
   display: flex;
   position: relative;
-  transform: translate(-80%, 0%);
+  transform: translate(-150%, 0%);
 }
 
 .header .nav__icons .icon__item {
@@ -2543,24 +2543,53 @@ Cart Area Media Query
 .header .search__input {
   position: absolute;
   display: block;
-  width: 120%;
+  width: 180%;
   height: 80%;
   border: none;
   outline: none;
   border-radius: 2rem;
-  background-color: blanchedalmond;
+  background-color: rgb(248, 245, 239);
   padding: 1rem;
-  color: darkgrey;
+  color: var(--black2);
   font-size: 1.3rem;
-  cursor: pointer;
   transition: 0.4s linear;
+  margin-left: -100px;
+  margin-top: 0.3rem;
 }
 
 .header .icon__search {
   position: absolute;
   right: 50%;
   top: 50%;
-  transform: translate(360%, -55%);
+  transform: translate(180%, -45%);
+  width: 2rem;
+  height: 2rem;
+  pointer-events: none;
+  font-size: 13pt;
+}
+
+.header .search__input_1 {
+  position: absolute;
+  display: block;
+  width: 180%;
+  height: 80%;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+  background-color: rgb(248, 245, 239);
+  padding: 1rem;
+  color: var(--black2);
+  font-size: 1.3rem;
+  transition: 0.4s linear;
+  margin-left: -100px;
+  margin-top: 0.3rem;
+}
+
+.header .icon__search_1 {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(180%, -45%);
   width: 2rem;
   height: 2rem;
   pointer-events: none;

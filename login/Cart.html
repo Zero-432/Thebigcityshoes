@@ -6,6 +6,8 @@
     <title></title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../style.css"> -->
     <style>
         input#quantity {
@@ -68,7 +70,7 @@
                 <nav class="navigate">
                     <div class="nav__logo">
                         <a href="../index.html" class="scroll-link" style="font-family:'Star Jedi'">
-                            THEBiGCiTYSHOES
+                            THEBiGCiTYSHoeS
                         </a>
                     </div>
                     <div class="nav__menu">
@@ -124,8 +126,8 @@
                     </div>
                     <div class="container search">
                         <div class="searchbox">
-                            <input type="text" maxlength="25" class="search__input" placeholder="Search..." />
-                            <i id="search_input" class="fas fa-search icon__search"></i>
+                            <input type="text" maxlength="25" class="search__input_1" placeholder="Search..." />
+                            <i id="search_input" class="fas fa-search icon__search_1"></i>
                         </div>
                     </div>
                     <div class="nav__icons">
@@ -216,25 +218,6 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../main.js"></script>
-    <script>
-        // The ready() method can only be used on the current document,
-        $(document).ready(function (c) {
-            $('.close').on('click', function (c) {
-                $('.cake-top').fadeOut('slow', function (c) {
-                    $('.cake-top').remove();
-                });
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function (c) {
-            $('.close-btm').on('click', function (c) {
-                $('.cake-bottom').fadeOut('slow', function (c) {
-                    $('.cake-bottom').remove();
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

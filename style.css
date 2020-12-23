@@ -2,10 +2,18 @@ html {
     scroll-behavior: smooth;
 }
 
-.fixed {
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+/* Cố định thanh Filter*/
+
+.filter {
     position: fixed;
-    z-index: 1000;
-    top: 0px;
+    right: 0;
+}
+.fa-filter{
+    color: var(--black2);
 }
 
 .filter-button {
@@ -16,10 +24,14 @@ html {
 }
 
 .filter-button:hover {
-    border: 1px solid pink;
+    border: 1px solid rgb(248, 245, 239);
     border-radius: 5px;
     color: white;
-    background-color: pink;
+    background-color: var(--black2);
+}
+
+.collapse:not(.show) {
+    display: none;
 }
 
 .card-header:first-child {
@@ -37,6 +49,25 @@ html {
 .btn:hover {
     color: none;
     text-decoration: none;
+}
+
+.btn {
+    position: sticky;
+    top: 0;
+}
+
+.btn-filter.focus, .btn-filter:focus {
+    box-shadow: none;
+}
+
+.btn-filter:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.btn-filter {
+    position: sticky;
+    top: 0;
 }
 
 /* Header */
@@ -128,12 +159,16 @@ html {
     max-width: 100%;
 }
 
+/* cố định thanh Header*/
+
 .header {
-    position: relative;
+    position: sticky;
+    top: 0;
     font-size: 62.5%;
     box-sizing: border-box;
     scroll-behavior: smooth;
     z-index: 10;
+    background-color: white;
 }
 
 .header .container {
@@ -155,7 +190,6 @@ html {
     height: 100%;
     height: 5rem;
     padding: 0 0.5rem;
-    background: white;
 }
 
 .header .nav__logo a {
@@ -275,10 +309,10 @@ html {
     border: none;
     outline: none;
     border-radius: 2rem;
-    background-color: blanchedalmond;
+    background-color: rgb(248, 245, 239);
     padding: 1rem;
+    color: var(--black2);
     font-size: 1.3rem;
-    cursor: pointer;
     transition: 0.4s linear;
 }
 
@@ -289,6 +323,7 @@ html {
     transform: translate(400%, -40%);
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
     font-size: 13pt;
 }
 
@@ -343,11 +378,26 @@ html {
     font-size: 17pt;
 }
 
+/* căn lễ cho cân bằng */
+
+.content {
+    margin-left: 250px;
+}
+
+/* cố định danh mục sản phẩm*/
+
+.side-menu {
+    position: fixed;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
 /*Footer*/
 
 .footer {
     background-color: var(--black3);
-    padding: 6rem 1rem;
+    padding: 2rem 1rem;
     line-height: 3rem;
     margin-right: -50;
 }
@@ -383,7 +433,7 @@ html {
     font-size: 1.4rem;
     font-weight: 400;
     margin-bottom: 1rem;
-    /* margin-left: 13px; */
+    color: white;
 }
 
 .footer #logo {
@@ -405,7 +455,9 @@ html {
 }
 
 .footer img {
-    max-width: 150%;
+    max-width: 200%;
+    margin-left: -2rem;
+    margin-top: 2rem;
 }
 
 .footer .footer-bottom__box {
@@ -415,14 +467,15 @@ html {
 }
 
 .footer-top__box {
-    padding-right: 5rem;
+    padding-right: 3rem;
+    margin-left: 4rem;
 }
 
 .goto-top {
     position: fixed;
     width: 50px;
     height: 50px;
-    background: pink;
+    background: var(--black3);
     bottom: 40px;
     right: 50px;
     text-decoration: none;
@@ -432,18 +485,35 @@ html {
     font-size: 22pt;
     transition: 0.3s;
     cursor: pointer;
-    border-radius: 1.5rem;
+    border-radius: 2.5rem;
     animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
+  }
+  
+  @keyframes bounce {
     0% {
-        transform: scale(0.8);
+      transform: scale(0.8);
     }
     50% {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
     0% {
-        transform: scale(1);
+      transform: scale(1);
     }
+  }
+
+.page-link {
+    color: black;
+}
+
+.card-title {
+    color: black;
+    font-size: 13pt;
+}
+
+.card-title:hover {
+    color: red;
+}
+
+.a-card-title:hover {
+    text-decoration: none;
 }

@@ -237,9 +237,9 @@ Reset
   border: none;
   outline: none;
   border-radius: 2rem;
-  background-color: blanchedalmond;
+  background-color: rgb(248, 245, 239);
   padding: 1rem;
-  color: darkgrey;
+  color: var(--black2);
   font-size: 1.4rem;
   cursor: pointer;
   transition: 0.4s linear;
@@ -344,7 +344,7 @@ html {
 body, input {
   font-size: 1.6rem;
   font-weight: 400;
-  font-family: "Archivo", sans-serif;
+  font-family: 'Cabin', sans-serif;
   color: var(--black);
 }
 
@@ -464,7 +464,6 @@ Navigation
 .nav__icons {
   display: flex;
   position: relative;
-
 }
 
 .nav__icons .icon__item svg {
@@ -1449,7 +1448,7 @@ Go Up
   position: fixed;
   width: 50px;
   height: 50px;
-  background: pink;
+  background: var(--black3);
   bottom: 40px;
   right: 50px;
   text-decoration: none;
@@ -1465,13 +1464,13 @@ Go Up
 
 @keyframes bounce {
   0% {
-      transform: scale(0.8);
+    transform: scale(0.8);
   }
   50% {
-      transform: scale(1.2);
+    transform: scale(1.2);
   }
   0% {
-      transform: scale(1);
+    transform: scale(1);
   }
 }
 
@@ -2548,6 +2547,27 @@ Cart Area Media Query
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-text {
+  font-size: 10pt;
+}
+
+.card-title {
+  color: black;
+  font-size: 11pt;
+}
+
+.card-title:hover {
+  color: red;
+}
+
+.a-card-title:hover {
+  text-decoration: none;
 }
 
 /* a:visited {
