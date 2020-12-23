@@ -252,65 +252,6 @@ $(document).ready(function () {
 		renderProductList(filtered_product);
 		$('.pagination').hide();
 	})
-	// Filter
-	$('#all_pk').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện');
-		renderProductList(filtered_product);
-		$('pagination').show();
-	})
-	$('#newpk').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện' && x.productLabel == 'New Arrival');
-		renderProductList(filtered_product);
-	})
-	$('#cap').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện' && x.productName.includes('Cap') == true);
-		renderProductList(filtered_product);
-	})
-	$('#socks').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Phụ kiện' && x.productName.includes('Socks') == true);
-		renderProductList(filtered_product);
-	})
-	$('#tee').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Nửa trên' && x.productName.includes('Tee') == true);
-		renderProductList(filtered_product);
-	})
-	$('#filter_all').click(() => {
-		let filtered_product = total_products.filter(x => x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_new').click(() => {
-		let filtered_product = total_products.filter(x => x.productLabel == 'New Arrival' && x.category == 'Giày');
-		renderProductList(filtered_product);
-		$('.pagination').hide();
-	})
-	$('#filter_training').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.substr(0, 6) == 'Vintas');
-		renderProductList(filtered_product);
-	})
-	$('#filter_sneaker').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.substr(0, 6) == 'Ananas' && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_sandal').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.includes('Pattas') == true && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_boots').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.substr(0, 5) == 'Basas' && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_sport').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.substr(0, 6) == 'Vintas' && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_hh').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.substr(0, 5) == 'Urbas' && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
-	$('#filter_doll').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.includes('Low Top') == true && x.category == 'Giày');
-		renderProductList(filtered_product);
-	})
 	$('#filter_price_1').click(() => {
 		let filtered_product = total_products.filter(x => x.productPrice == '550.000 VND');
 		console.log(filtered_product, product_list)
@@ -521,15 +462,15 @@ function displayCart() {
 	for (let item of cart) {
 		$('.cart-items').append(
 			`
-			< tr id = "item${item.product.id}" >
-			<td class="product__thumbnail">
-				<a href="../detail.html?id=${item.product.id}">
-					<img style="width:100%" src="${item.product.image}" alt="item image">
+			<tr id="item${item.product.id}">
+				<td class="product__thumbnail">
+					<a href="../detail.html?id=${item.product.id}">
+						<img style="width:100%" src="${item.product.image}" alt="item image">
 					</a>
 				</td>
 				<td class="product__name">
 					<a href="../detail.html?id=${item.product.id}">${item.product.name}</a>
-				<br><br>
+					<br><br>
 					<small>White/6.25</small>
 				</td>
 				<td class="quantity">
@@ -539,15 +480,15 @@ function displayCart() {
 							onchange="cart_quantity_change(${item.product.id})">
 					</div>
 				</td>
-						<td class="price">
+				<td class="price">
 					<h4>${formatNumber(item.product.price)} VND</h4>
 				</td>
-						<td class="top-remove">
-							<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
-							<div class="close" onclick="remove_cart_item(${item.product.id})">
-								<h5>Remove</h5>
-							</div>
-						</td>
+				<td class="top-remove">
+					<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
+					<div class="close" onclick="remove_cart_item(${item.product.id})">
+						<h5>Remove</h5>
+					</div>
+				</td>
 			</tr>
 			`
 		)
@@ -557,18 +498,18 @@ function displayCart() {
 
 // Related__P
 async function relatedProducts() {
-						$('#related__p').empty();
+	$('#related__p').empty();
 	let products = await getData(1);
 	related_products = [];
 	while (related_products.length < 5) {
-						let item = products[Math.floor(Math.random() * products.length)];
+		let item = products[Math.floor(Math.random() * products.length)];
 		if (!related_products.includes(item)) {
-						related_products.push(item);
+			related_products.push(item);
 		}
 	}
 	console.log(related_products);
 	related_products.forEach(item => {
-						let row = $('#related__p');
+		let row = $('#related__p');
 		row.append(
 			"<div class='card' style='width: 18rem;'>" +
 			`<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
@@ -583,20 +524,20 @@ async function relatedProducts() {
 }
 // Lasted__P
 async function lastedProducts() {
-							$('#lasted__p').empty();
+	$('#lasted__p').empty();
 	let products = await getData(1);
 	lasted_products = [];
 	while (lasted_products.length < 5) {
-							// Lasted products
-							// lasted_products = products.slice(Math.max(products.length - 5, 1));
-							let item = products[Math.floor(Math.random() * products.length)];
+		// Lasted products
+		// lasted_products = products.slice(Math.max(products.length - 5, 1));
+		let item = products[Math.floor(Math.random() * products.length)];
 
 		if (!lasted_products.includes(item)) {
-							lasted_products.push(item);
+			lasted_products.push(item);
 		}
 	}
 	lasted_products.forEach(item => {
-							let row = $('#lasted__p');
+		let row = $('#lasted__p');
 		row.append(
 			"<div class='card' style='width: 18rem;'>" +
 			`<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
