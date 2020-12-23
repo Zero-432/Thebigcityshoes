@@ -2,15 +2,12 @@ html {
     scroll-behavior: smooth;
 }
 
-<<<<<<< HEAD
-=======
 .fixed {
     position: fixed;
     z-index: 1000;
     top: 0px;
 }
 
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 .filter-button {
     /* border: 1px solid pink;
     border-radius: 5px; */
@@ -24,21 +21,6 @@ html {
     color: white;
     background-color: pink;
 }
-<<<<<<< HEAD
-.card-header:first-child{
-    background: none;
-}
-.card{
-    border: none;
-}
-.btn.focus, .btn:focus{
-    box-shadow: none;
-}
-.btn:hover{
-    color:  none;
-    text-decoration: none;
-}
-=======
 
 .card-header:first-child {
     background: none;
@@ -57,7 +39,6 @@ html {
     text-decoration: none;
 }
 
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 /* Header */
 
 :root {
@@ -356,12 +337,8 @@ html {
     top: 0;
     left: -1rem;
 }
-<<<<<<< HEAD
-.header .page_title{
-=======
 
 .header .page_title {
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
     margin-bottom: 0.6rem;
     font-size: 17pt;
 }

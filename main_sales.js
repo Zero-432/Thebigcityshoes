@@ -32,11 +32,7 @@ function renderProductList(products) {
             `<hr style="border-top: 3px dashed #bbb;" >` +
             `<a " href="detail.html?id=${item.productID}"><h5 style="font-size: 13pt;" class='card-title'>${item.productName}</h5></a>` +
             `<p class='card-text'>Color: ${item.productColor}</p>` +
-<<<<<<< HEAD:main_sales.js
-            `<b class='card-text'>Price: ${item.promotion}<span style="font-weight: normal; text-decoration: line-through;" class='price-real'>${item.productPrice}</span></b>` +
-=======
             `<b class='card-text'>Price: ${item.promotion.priceAfterPromotion}<span style="font-weight: normal; text-decoration: line-through;" class='price-real'>${item.productPrice}</span></b>` +
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0:Blog/main_sales.js
             "</div>" +
             "</div>" +
             "</div>"

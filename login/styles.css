@@ -2336,24 +2336,16 @@ Cart Area Media Query
 .header div a {
   text-decoration: none;
   color: black;
-<<<<<<< HEAD
-  font-size: 16px;
-  padding: 15px;
-=======
   font-size: 1.5rem;
   padding: 8px;
   padding-left: 15px;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   display: inline-block;
 }
 
 .header div a:hover {
   text-decoration: none;
   color: red;
-<<<<<<< HEAD
-=======
   background: white;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 }
 
 .nav__menu ul {
@@ -2426,11 +2418,7 @@ Cart Area Media Query
 
 .header .navigation {
   position: relative;
-<<<<<<< HEAD
-  height: 5rem;
-=======
   height: 7rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
@@ -2439,31 +2427,19 @@ Cart Area Media Query
   align-items: center;
   justify-content: space-between;
   height: 100%;
-<<<<<<< HEAD
-  height: 5rem;
-=======
   height: 7rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   padding: 0 0.5rem;
 }
 
 .header .nav__logo a {
-<<<<<<< HEAD
-  font-size: 1.6rem;
-=======
   font-size: 2.5rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   color: var(--black);
   padding: 1.6rem;
   font-weight: 700;
 }
 
 .header .nav__logo {
-<<<<<<< HEAD
-  transform: translate(25%, 0%);
-=======
   transform: translate(25%, -5%);
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 }
 
 .header .nav__menu {
@@ -2484,11 +2460,7 @@ Cart Area Media Query
 
 .header .nav__list .nav__link:link, .header .nav__list .nav__link:visited {
   display: flex;
-<<<<<<< HEAD
-  font-size: 0.9rem;
-=======
   font-size: 1.3rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   text-transform: uppercase;
   color: var(--black);
   transition: color 0.3s ease-in-out;
@@ -2516,11 +2488,7 @@ Cart Area Media Query
 .header .nav__icons .icon__item {
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  padding: 0.2rem;
-=======
   padding: 0.8rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   border: 1px solid var(--black);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
@@ -2554,11 +2522,7 @@ Cart Area Media Query
 .header .nav__icons .icon__item i {
   width: 2rem;
   height: 1.6rem;
-<<<<<<< HEAD
-  transform: translate(20%, 0%);
-=======
   transform: translate(10%, -15%);
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 }
 
 .header .container.search {
@@ -2580,11 +2544,7 @@ Cart Area Media Query
   position: absolute;
   display: block;
   width: 120%;
-<<<<<<< HEAD
-  height: 50%;
-=======
   height: 80%;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   border: none;
   outline: none;
   border-radius: 2rem;
@@ -2600,11 +2560,7 @@ Cart Area Media Query
   position: absolute;
   right: 50%;
   top: 50%;
-<<<<<<< HEAD
-  transform: translate(400%, -40%);
-=======
   transform: translate(360%, -55%);
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   width: 2rem;
   height: 2rem;
   pointer-events: none;
@@ -2612,11 +2568,7 @@ Cart Area Media Query
 }
 
 .header #cart__icon {
-<<<<<<< HEAD
-  transform: translate(-1%, 5%);
-=======
   transform: translate(-10%, -10%);
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 }
 
 /*Footer*/
@@ -2641,16 +2593,10 @@ Cart Area Media Query
 .footer .footer-top__box a:link, .footer .footer-top__box a:visited {
   display: block;
   color: var(--grey);
-<<<<<<< HEAD
-  font-size: 1rem;
-  transition: 0.6s;
-  text-decoration: none;
-=======
   font-size: 1.6rem;
   transition: 0.6s;
   text-decoration: none;
   padding-top: 1rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 }
 
 .footer .footer-top__box a:hover {
@@ -2663,11 +2609,7 @@ Cart Area Media Query
 }
 
 .footer .footer-top__box h3 {
-<<<<<<< HEAD
-  font-size: 1.4rem;
-=======
   font-size: 2rem;
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
   font-weight: 400;
   margin-bottom: 1rem;
   /* margin-left: 13px; */
