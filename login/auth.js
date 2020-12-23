@@ -49,7 +49,7 @@ function onLogin() {
         if (temp.password === user.password) {
             alert("Login success!");
             localStorage.setItem('is_logged', true);
-            window.location = "../mainpage.html";
+            window.location = "../index.html";
             return true;
         } else {
             alert("Password is incorrect!");
