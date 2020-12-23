@@ -352,7 +352,7 @@ $(document).ready(function () {
 		$('.pagination').hide();
 	})
 	$('#filter_sales').click(() => {
-		let filtered_product = total_products.filter(x => x.productLabel == 'Sales off');
+		let filtered_product = total_products.filter(x => x.productName.productLabel == 'Sales off');
 		renderProductList(filtered_product);
 		$('.pagination').hide();
 	})
@@ -392,7 +392,7 @@ $('#product-info').ready(function () {
 		item.id = product_id;
 		item.name = $('.product-detail__content > h3').text();
 		item.image = $('#product__picture .picture__container img').attr('src');
-		item.price = parseInt($('.product-detail__content > .price .new__price').text().replace(',', '.').replace(' ', '').slice(0, -4));
+		item.price = parseInt($('.product-detail__content > .price .new__price').text().slice(0, -4).replace('.', ''));
 		// kiểm tra trong cart có sp này chưa
 		let quantity = $('#product_qty').val(); // số lượng sản phẩm
 		// tìm index của item trùng
@@ -418,6 +418,11 @@ function loadCartTotal() {
 	// hiển thị tổng số sản phẩm lên icon giỏ hàng ở góc phải
 	$('#cart__total').text(total_cartItems);
 }
+
+function formatNumber(num) {
+	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 // Khi trang cart load
 $('cart-container').ready(function () {
 	displayCart();
@@ -427,7 +432,7 @@ function displayCart() {
 	let cart = loadCart();
 	let total_price = 0;
 	cart.forEach(item => total_price += item.product.price * item.quantity);
-	$('.new__price').text(total_price.toString() + 'VND');
+	$('.new__price').text(formatNumber(total_price) + 'VND');
 	for (let item of cart) {
 		$('.cart-items').append(
 			`
@@ -449,10 +454,10 @@ function displayCart() {
 					</div>
 				</td>
 				<td class="price">
-					<h4>${item.product.price} VND</h4>
+					<h4>${formatNumber(item.product.price)} VND</h4>
 				</td>
 				<td class="top-remove">
-					<h4>${item.quantity * item.product.price} VND</h4>
+					<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
 					<div class="close" onclick="remove_cart_item(${item.product.id})">
 						<h5>Remove</h5>
 					</div>
