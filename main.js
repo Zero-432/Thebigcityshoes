@@ -4,11 +4,6 @@ var totalProducts;
 var related_products = [];
 var lasted_products = [];
 var purchased_P = JSON.parse(localStorage.getItem('users')) || [];
-<<<<<<< HEAD
-function returnHomePage() {
-	window.location = "mainpage.html";
-}
-=======
 // cố định header
 // lấy vị trí hiện tại của thanh navigation
 $(document).ready(function () {
@@ -22,7 +17,6 @@ $(document).ready(function () {
 		}
 	})
 })
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 function getData(page) {
 	let url = `https://upbeat-leaf-marmoset.glitch.me/products?_page=${page}&_limit=12`;
 	return $.getJSON(url, function (data) {
@@ -144,8 +138,6 @@ function createPagination(total, limit) {
 			$(".pagination li").removeClass("active");
 			$(this).addClass("active");
 			getData(pageItem);
-<<<<<<< HEAD
-=======
 		}
 	})
 	$('#next-page').click(() => {
@@ -170,13 +162,10 @@ function createPagination(total, limit) {
 			$(".pagination li").removeClass("active");
 			getData(pageItems);
 			$(".pagination li.page-item:eq(" + (pageItems - 1) + ")").addClass("active");
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 		}
 	})
 }
 
-<<<<<<< HEAD
-=======
 // Tìm kiếm sản phẩm
 $('#search_input').click(function () {
 	let search_query = $('.search__input').val();
@@ -186,7 +175,6 @@ $('#search_input').click(function () {
 	});
 })
 
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 /// Khi trang home được load
 $(document).ready(function () {
 	var i = 1;
@@ -366,12 +354,6 @@ $(document).ready(function () {
 		renderProductList(filtered_product);
 		$('.pagination').hide();
 	})
-<<<<<<< HEAD
-	$('#filter_sales').click(() => {
-		let filtered_product = total_products.filter(x => x.productName.productLabel == 'Sales off');
-		renderProductList(filtered_product);
-	})
-=======
 	$('#filter_price_pk2').click(() => {
 		let filtered_product = total_products.filter(x => x.productPrice == '95.000 VND' && x.category == 'Phụ kiện');
 		renderProductList(filtered_product);
@@ -437,7 +419,6 @@ $(document).ready(function () {
 
 	// load tổng số trong giỏ hàng lên icon giỏ hàng
 	loadCartTotal();
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 });
 function loadCart() {
 	if (localStorage.getItem('cart')) {
@@ -458,10 +439,7 @@ $('#product-info').ready(function () {
 	const product_id = urlParams.get('id');
 	showDetail(product_id);
 
-<<<<<<< HEAD
-=======
 	/// cart
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 	var cart = loadCart() || []; // Mảng chứa các item có trong cart | load ra từ local hoặc [] nếu chưa có
 	$('#add_cart').click(function () {
 		let item = {
@@ -473,14 +451,9 @@ $('#product-info').ready(function () {
 		item.id = product_id;
 		item.name = $('.product-detail__content > h3').text();
 		item.image = $('#product__picture .picture__container img').attr('src');
-<<<<<<< HEAD
-		item.price = parseInt($('.product-detail__content > .price .new__price').text().replace(',', '.').replace(' ', '').slice(0, -4));
-		// kiểm tra trong cart có sp này chưa
-=======
 		item.price = parseInt($('.product-detail__content > .price .new__price').text().slice(0, -4).replace('.', ''));
 		// kiểm tra trong cart có sp này chưa
 		let quantity = $('#product_qty').val(); // số lượng sản phẩm
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 		// tìm index của item trùng
 		let duplicate_index = cart.findIndex(cart_item => cart_item.product.id === item.id);
 		if (duplicate_index > -1) { // nếu trùng
@@ -488,19 +461,11 @@ $('#product-info').ready(function () {
 		} else { // ko trùng
 			cart.push({
 				product: item,
-<<<<<<< HEAD
-				quantity: parseInt($('#product_qty').val())
-=======
 				quantity: parseInt(quantity)
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 			});
 		}
 		// lưu cart vào local
 		saveCart(cart);
-<<<<<<< HEAD
-	})
-});
-=======
 		loadCartTotal();
 	})
 });
@@ -517,7 +482,6 @@ function formatNumber(num) {
 	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
 // Khi trang cart load
 $('cart-container').ready(function () {
 	displayCart();
@@ -527,58 +491,36 @@ function displayCart() {
 	let cart = loadCart();
 	let total_price = 0;
 	cart.forEach(item => total_price += item.product.price * item.quantity);
-<<<<<<< HEAD
-	$('.new__price').text(total_price.toString() + 'VND');
-	for (let item of cart) {
-		$('.cart-items').append(
-			`
-			<tr class="cake-top">
-				<td class="product__thumbnail">
-					<a href="#">
-=======
 	$('.new__price').text(formatNumber(total_price) + 'VND');
 	for (let item of cart) {
 		$('.cart-items').append(
 			`
-			<tr id="item${item.product.id}">
-				<td class="product__thumbnail">
-					<a href="../detail.html?id=${item.product.id}">
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
-						<img style="width:100%" src="${item.product.image}" alt="item image">
+			< tr id = "item${item.product.id}" >
+			<td class="product__thumbnail">
+				<a href="../detail.html?id=${item.product.id}">
+					<img style="width:100%" src="${item.product.image}" alt="item image">
 					</a>
 				</td>
 				<td class="product__name">
-<<<<<<< HEAD
-					<a href="#">${item.product.name}</a>
-=======
 					<a href="../detail.html?id=${item.product.id}">${item.product.name}</a>
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
-					<br><br>
+				<br><br>
 					<small>White/6.25</small>
 				</td>
-				<td class="quantity">
-					<div class="product-right">
-						<input size="5" min="1" type="number" id="quantity" name="quantity"
-							value="${item.quantity}" class="form-control input-small">
+					<td class="quantity">
+						<div class="product-right">
+							<input size="5" min="1" type="number" id="quantity" name="quantity"
+								value="${item.quantity}" class="form-control input-small">
 					</div>
 				</td>
-				<td class="price">
-<<<<<<< HEAD
-					<h4>${item.product.price} VND</h4>
-				</td>
-				<td class="top-remove">
-					<h4>${item.quantity * item.product.price} VND</h4>
-					<div class="close">
-=======
+						<td class="price">
 					<h4>${formatNumber(item.product.price)} VND</h4>
 				</td>
-				<td class="top-remove">
-					<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
-					<div class="close" onclick="remove_cart_item(${item.product.id})">
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
-						<h5>Remove</h5>
-					</div>
-				</td>
+						<td class="top-remove">
+							<h4>${formatNumber(item.quantity * item.product.price)} VND</h4>
+							<div class="close" onclick="remove_cart_item(${item.product.id})">
+								<h5>Remove</h5>
+							</div>
+						</td>
 			</tr>
 			`
 		)
@@ -588,18 +530,18 @@ function displayCart() {
 
 // Related__P
 async function relatedProducts() {
-	$('#related__p').empty();
+						$('#related__p').empty();
 	let products = await getData(1);
 	related_products = [];
 	while (related_products.length < 5) {
-		let item = products[Math.floor(Math.random() * products.length)];
+						let item = products[Math.floor(Math.random() * products.length)];
 		if (!related_products.includes(item)) {
-			related_products.push(item);
+						related_products.push(item);
 		}
 	}
 	console.log(related_products);
 	related_products.forEach(item => {
-		let row = $('#related__p');
+						let row = $('#related__p');
 		row.append(
 			"<div class='card' style='width: 18rem;'>" +
 			`<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
@@ -614,20 +556,20 @@ async function relatedProducts() {
 }
 // Lasted__P
 async function lastedProducts() {
-	$('#lasted__p').empty();
+							$('#lasted__p').empty();
 	let products = await getData(1);
 	lasted_products = [];
 	while (lasted_products.length < 5) {
-		// Lasted products
-		// lasted_products = products.slice(Math.max(products.length - 5, 1));
-		let item = products[Math.floor(Math.random() * products.length)];
+							// Lasted products
+							// lasted_products = products.slice(Math.max(products.length - 5, 1));
+							let item = products[Math.floor(Math.random() * products.length)];
 
 		if (!lasted_products.includes(item)) {
-			lasted_products.push(item);
+							lasted_products.push(item);
 		}
 	}
 	lasted_products.forEach(item => {
-		let row = $('#lasted__p');
+							let row = $('#lasted__p');
 		row.append(
 			"<div class='card' style='width: 18rem;'>" +
 			`<img class='card-img-top' src="${item.media.link[0]}" alt='image'>` +
@@ -641,16 +583,6 @@ async function lastedProducts() {
 	});
 }
 
-<<<<<<< HEAD
-// Cart
-// function addToCart() {
-// 	let purchased_P = {
-// 		name: productName,
-// 		price: productPrice,
-// 		quantity: 
-// 	}
-// }
-=======
 function remove_cart_item(id) {
 	// xóa item trên giao diện
 	let el_id = `#item${id}`
@@ -692,4 +624,3 @@ async function loadPhukien() {
 $('.phukien').ready(function () {
 	loadPhukien();
 })
->>>>>>> babd0564f74b98bb19f9f5dcd36b5764a359cdc0
