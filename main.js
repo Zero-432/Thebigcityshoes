@@ -361,18 +361,6 @@ $(document).ready(function () {
 	// load tổng số trong giỏ hàng lên icon giỏ hàng
 	loadCartTotal();
 });
-function loadCart() {
-	if (localStorage.getItem('cart')) {
-		return JSON.parse(localStorage.getItem('cart'));
-	}
-}
-
-function saveCart(cart) {
-	if (cart) {
-		return localStorage.setItem('cart', JSON.stringify(cart));
-	}
-	return false;
-}
 
 // Khi trang chi tiết sản phẩm load
 $('#product-info').ready(function () {
@@ -411,6 +399,12 @@ $('#product-info').ready(function () {
 	})
 });
 
+
+
+function formatNumber(num) {
+	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function loadCartTotal() {
 	let cart = JSON.parse(localStorage.getItem('cart'));
 	let total_cartItems = 0;
@@ -419,8 +413,43 @@ function loadCartTotal() {
 	$('#cart__total').text(total_cartItems);
 }
 
-function formatNumber(num) {
-	return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+function loadCart() {
+	if (localStorage.getItem('cart')) {
+		return JSON.parse(localStorage.getItem('cart'));
+	}
+}
+
+function saveCart(cart) {
+	if (cart) {
+		return localStorage.setItem('cart', JSON.stringify(cart));
+	}
+	return false;
+}
+// khi thay đổi số lượng trong giỏ hàng
+function cart_quantity_change(item_id) {
+	let quantity = $(`#cart_quantity${item_id}`).val();
+	let cart = loadCart() || [];
+	let target_index = cart.findIndex(x => x.product.id == item_id);
+	if (quantity > 0) {
+		cart[target_index].quantity = parseInt(quantity);
+	};
+	saveCart(cart);
+	loadCartTotal();
+	displayCart();
+}
+
+function remove_cart_item(id) {
+	// xóa item trên giao diện
+	let el_id = `#item${id}`
+	$(el_id).fadeOut('slow', function (c) {
+		$(el_id).remove();
+	});
+
+	// xóa item trong localStorage
+	let cart = JSON.parse(localStorage.getItem('cart'));
+	cart = cart.filter(x => x.product.id != id);
+	localStorage.setItem('cart', JSON.stringify(cart));
+	loadCartTotal();
 }
 
 // Khi trang cart load
@@ -433,6 +462,7 @@ function displayCart() {
 	let total_price = 0;
 	cart.forEach(item => total_price += item.product.price * item.quantity);
 	$('.new__price').text(formatNumber(total_price) + 'VND');
+	$('.cart-items').empty();
 	for (let item of cart) {
 		$('.cart-items').append(
 			`
@@ -449,8 +479,9 @@ function displayCart() {
 				</td>
 				<td class="quantity">
 					<div class="product-right">
-						<input size="5" min="1" type="number" id="quantity" name="quantity"
-							value="${item.quantity}" class="form-control input-small">
+						<input size="5" min="1" type="number" id="cart_quantity${item.product.id}" name="quantity"
+							value="${item.quantity}" class="form-control input-small quantity"
+							onchange="cart_quantity_change(${item.product.id})">
 					</div>
 				</td>
 				<td class="price">
@@ -524,25 +555,11 @@ async function lastedProducts() {
 	});
 }
 
-function remove_cart_item(id) {
-	// xóa item trên giao diện
-	let el_id = `#item${id}`
-	$(el_id).fadeOut('slow', function (c) {
-		$(el_id).remove();
-	});
-
-	// xóa item trong localStorage
-	let cart = JSON.parse(localStorage.getItem('cart'));
-	cart = cart.filter(x => x.product.id != id);
-	localStorage.setItem('cart', JSON.stringify(cart));
-	loadCartTotal();
-}
-
 async function loadPhukien() {
 	let total_products = await get_totalProducts();
 	// console.log(total_products);
 	total_products = total_products.filter(x => x.category == 'Phụ kiện');
-	console.log(total_products);
+	// console.log(total_products);
 	$('.phukien').empty();
 	total_products.forEach(item => {
 		let row = $('.phukien');
